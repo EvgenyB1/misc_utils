@@ -1,2 +1,2 @@
-misc_utils
+Miscellanious utilities and scripts
 ==========
