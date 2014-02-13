@@ -1,9 +1,10 @@
 def key_combo(char):
-    """ Converts char to T9 mobile keypad presses
-    >>>t9.key_combo('a')
-    2
-    >>>t9.key_combo('B')
-    22
+    """ Returns T9 mobile keypad representation of char
+    >>> import t9
+    >>> t9.key_combo('a')
+    '2'
+    >>> t9.key_combo('B')
+    '22'
     """
     if len(char) > 1:
         raise ValueError("Function expects single char")
@@ -21,10 +22,11 @@ def key_combo(char):
 def string(string):
     """ Returns T9 mobile keypad representation of string.
     Uses ' ' to indicate pause between characters on same key
+    >>> import t9
     >>> t9.string('AA')
-    2 2
+    '2 2'
     >>> t9.string('foo  bar')
-    333666 6660 022 2777
+    '333666 6660 022 2777'
     """
     keypad_string = [' ']
     for char in string:
@@ -36,3 +38,7 @@ def string(string):
             keypad_string.append(' ')
         keypad_string.append(t9_key)
     return ''.join(keypad_string).lstrip()
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod(verbose=True)
