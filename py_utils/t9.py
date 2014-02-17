@@ -39,6 +39,7 @@ def string(string):
         keypad_string.append(t9_key)
     return ''.join(keypad_string).lstrip()
 
-if __name__ == "__main__":
+
+def run_doctest():
     import doctest
     doctest.testmod(verbose=True)
