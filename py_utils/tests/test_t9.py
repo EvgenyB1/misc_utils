@@ -24,6 +24,10 @@ class Test(unittest.TestCase):
     def test_t9_string(self):
         self.assertEqual(t9.string('foo  bar'), '333666 6660 022 2777',
                          "T9 for 'foo  bar' is 333666 6660 022 2777")
+        self.assertEqual(t9.string('a a'), '202',
+                         "T9 for 'a a' is 202")
+        self.assertEqual(t9.string('a'), '2',
+                         "T9 for 'a a' is 2")
 
     def tearDown(self):
         pass
